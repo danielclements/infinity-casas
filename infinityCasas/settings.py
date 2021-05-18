@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Intalled apps
     'home',
+    'listings',
 ]
 
 MIDDLEWARE = [
