@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
     {% endblock %}
 
     {% block extra_meta %}
+
     {% endblock %}
 
     {% block corecss %}
@@ -42,17 +44,21 @@
     <!-- Place holder Nav -->
     <nav>
       <ul class="nav holder-nav justify-content-end">
+
+          <a class="navbar-brand" href="#">
+            <img src="{& static 'images/main-logo.png' &}" alt="" width="30" height="24">
+          </a>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Place Holder</a>
+            <a class="nav-link" href="#">Our Properties</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Place Holder</a>
+            <a class="nav-link" href="#">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link" href="#" tabindex="-1">Contact Us</a>
           </li>
         </ul>
   </nav>
