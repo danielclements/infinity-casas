@@ -1,3 +1,4 @@
+from datetime import datetime, date
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -33,6 +34,7 @@ class property(models.Model):
     # features array
     # images array
     # date datetime //Used if the property should be added or updated Ex. 2013-04-05 13:45:45
+    date = models.DateField(auto_now=True, blank=True)
 
     def __str__(self):
         return self.title
