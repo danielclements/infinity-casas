@@ -13,10 +13,11 @@ class property(models.Model):
     pool = models.IntegerField(blank=True, null=True, validators=[MaxValueValidator(1), MinValueValidator(0)])
     ref = models.CharField(max_length=254, null=True, blank=True)
     price = models.IntegerField(blank=True, null=True)
-    # currency = models.ForeignKey(
-    #     'currency_type', null=True, blank=True, on_delete=models.SET_NULL)
+    currency = models.ForeignKey(
+        'currency_type', null=True, blank=True, on_delete=models.SET_NULL)
     price_freq = models.ForeignKey(
-        'price_freq', null=True, blank=True, on_delete=models.SET_NULL)
+        'price_freq', null=True, blank=True, on_delete=models.SET_NULL) 
+
     # type = models.ForeignKey(
     #     'type', null=True, blank=True, on_delete=models.SET_NULL)
     town = models.CharField(max_length=254, null=True, blank=True)
@@ -26,16 +27,7 @@ class property(models.Model):
     # desc text // description Mandatory, No HTML,UTF-8 encoded text only
     # features array
     # images array
-    # date datetime //Used if the property should be added or updated
-
-
-
-    meal_type = models.ForeignKey(
-        'currency_type', null=True, blank=True, on_delete=models.SET_NULL)
-    name = models.CharField(max_length=254, null=True, blank=True)
-    calories = models.IntegerField(blank=True, null=True)
-    ingredients = ArrayField(models.CharField(max_length=200), blank=True, null=True)
-    meal_img = models.ImageField(null=True, blank=True)
+    # date datetime //Used if the property should be added or updated Ex. 2013-04-05 13:45:45
 
     def __str__(self):
         return self.name
@@ -53,11 +45,14 @@ class price_freq(models.Model):
     def __str__(self):
         return self.price_freq
 
+# https://help.kyero.com/property-types-used-in-kyero Kyero property type source page
 class property_type(models.Model):
-    property_type = models.IntegerField(blank=True, null=True)
+    property_type = models.CharField(max_length=254, null=True, blank=False)
 
     def __str__(self):
         return self.property_type
 
 class provence(models.Model):
-    provence = models.CharField(max_length=100, null=True)
+    provence = models.CharField(max_length=100,  null=True, blank=False)
+    def __str__(self):
+        return self.provence
