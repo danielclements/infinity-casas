@@ -18,10 +18,12 @@ class property(models.Model):
     price_freq = models.ForeignKey(
         'price_freq', null=True, blank=True, on_delete=models.SET_NULL) 
 
-    # type = models.ForeignKey(
-    #     'type', null=True, blank=True, on_delete=models.SET_NULL)
+    type = models.ForeignKey(
+        'property_type', null=True, blank=True, on_delete=models.SET_NULL)
     town = models.CharField(max_length=254, null=True, blank=True)
-    # province varchar // Mandatory
+
+    provence = models.ForeignKey(
+        'provence', null=True, blank=True, on_delete=models.SET_NULL)
     # country varchar // Mandatory
     # video_url url// optional
     # desc text // description Mandatory, No HTML,UTF-8 encoded text only
@@ -30,7 +32,7 @@ class property(models.Model):
     # date datetime //Used if the property should be added or updated Ex. 2013-04-05 13:45:45
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class currency_type(models.Model):
