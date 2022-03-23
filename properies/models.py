@@ -24,7 +24,10 @@ class property(models.Model):
 
     provence = models.ForeignKey(
         'provence', null=True, blank=True, on_delete=models.SET_NULL)
-    # country varchar // Mandatory
+
+    country = models.ForeignKey(
+        'country', null=True, blank=True, on_delete=models.SET_NULL)
+
     # video_url url// optional
     # desc text // description Mandatory, No HTML,UTF-8 encoded text only
     # features array
@@ -58,3 +61,9 @@ class provence(models.Model):
     provence = models.CharField(max_length=100,  null=True, blank=False)
     def __str__(self):
         return self.provence
+
+
+class country(models.Model):
+    country = models.CharField(max_length=100,  null=True, blank=False)
+    def __str__(self):
+        return self.country
