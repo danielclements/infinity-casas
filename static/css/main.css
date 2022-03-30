@@ -1,5 +1,6 @@
 :root {
     --primary: #D70000;
+    --secondary: #ec4141;
     --light: #EEEEEE;
     --dark: #131313;
 }
@@ -87,9 +88,40 @@ opacity: 0;
 transform: translateX(15px);
 }
 
+.hamburger.is-active:hover span {
+    background-color: var(--primary);
+
+}
 
 .menu{
     display:none;
+    flex: 1 1 0%;
+    justify-content: flex-end;
+    margin: 0px -16px;
+}
+
+.menu a{
+    color: var(--light);
+    margin: 0;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+    padding: 8px 16px;
+    border-radius: 99px;
+}
+
+.menu a.nav-active, .menu a:hover {
+    color: var(--secondary);
+
+}
+
+@media (min-width: 768px){
+    .hamburger{
+        display: none;
+    }
+    .menu{
+        display: flex;
+    }
 }
 
 /* Navbar-End */
