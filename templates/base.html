@@ -36,7 +36,10 @@
         <script src="https://js.stripe.com/v3/"></script>
         <!-- Bootstrap -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    {% endblock %}
+        <!-- custom JS  -->
+        <script src="{% static '/js/main.js' %}"></script>
+
+        {% endblock %}
 
     <title>Infinity Casas{% block extra_title %}{% endblock %}</title>
 
@@ -45,25 +48,22 @@
 
     <!-- Place holder Nav -->
     <nav>
-      <ul class="nav holder-nav justify-content-end">
-
-          <a class="navbar-brand" href="#">
-            <img src="{% static 'images/main-logo.png' %}" alt="" width="30" height="24">
-          </a>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Our Properties</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li> 
-          <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1">Contact Us</a>
-          </li>
-        </ul>
-  </nav>
+      <div class="container-nav">      
+        <h1>InfinityCasas</h1>
+        <div class="menu">
+          <a href="#" class=""is-active>Home</a>
+          <a href="#">Our Properties</a>
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <button class="hamburger ">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>  
+      </div>
+    </nav>
+    
 
     {% block content %}
     
