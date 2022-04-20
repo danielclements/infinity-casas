@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # Intalled apps
     'home',
     'properies',
+
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +140,14 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# S3 Bucket config
+
+AWS_ACCESSS_KEY_ID = 'AKIA4ZU7Z2VT5DDCRMHI'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'infinity-casas-property-bucket'
+
+AWS_S3_FILE_OVERWRITE = 'False'
+AWS_DEFAULT_ACL = 'None'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
