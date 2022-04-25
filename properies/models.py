@@ -14,26 +14,17 @@ class property(models.Model):
     pool = models.IntegerField(blank=True, null=True, validators=[MaxValueValidator(1), MinValueValidator(0)])
     ref = models.CharField(max_length=254, null=True, blank=True)
     price = models.IntegerField(blank=True, null=True)
-    currency = models.ForeignKey(
-        'currency_type', null=True, blank=True, on_delete=models.SET_NULL)
-    price_freq = models.ForeignKey(
-        'price_freq', null=True, blank=True, on_delete=models.SET_NULL) 
-
-    type = models.ForeignKey(
-        'property_type', null=True, blank=True, on_delete=models.SET_NULL)
+    currency = models.ForeignKey('currency_type', null=True, blank=True, on_delete=models.SET_NULL)
+    price_freq = models.ForeignKey('price_freq', null=True, blank=True, on_delete=models.SET_NULL) 
+    type = models.ForeignKey('property_type', null=True, blank=True, on_delete=models.SET_NULL)
     town = models.CharField(max_length=254, null=True, blank=True)
-
-    provence = models.ForeignKey(
-        'provence', null=True, blank=True, on_delete=models.SET_NULL)
-
-    country = models.ForeignKey(
-        'country', null=True, blank=True, on_delete=models.SET_NULL)
-
+    provence = models.ForeignKey('provence', null=True, blank=True, on_delete=models.SET_NULL)
+    country = models.ForeignKey('country', null=True, blank=True, on_delete=models.SET_NULL)
     # video_url url// optional
     # desc text // description Mandatory, No HTML,UTF-8 encoded text only
     # features array
     # images array
-    # date datetime //Used if the property should be added or updated Ex. 2013-04-05 13:45:45
+    image = models.ImageField(null=True, blank=True)
     date = models.DateField(auto_now=True, blank=True)
 
     def __str__(self):

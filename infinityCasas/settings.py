@@ -129,25 +129,34 @@ USE_L10N = True
 
 USE_TZ = True
 
+# S3 Bucket config
+
+AWS_ACCESS_KEY_ID = 'AKIA4ZU7Z2VTW25RMNE3'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'infinity-casas-property-bucket'
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400'
+}
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_LOCATION = 'static'
+AWS_QUERYSTRING_AUTH = False
+AWS_HEADERS = {
+    'access-control-allow-origin': '*'
+}
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = 'public-read'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/images/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
-# S3 Bucket config
-
-AWS_ACCESSS_KEY_ID = 'AKIA4ZU7Z2VT5DDCRMHI'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'infinity-casas-property-bucket'
-
-AWS_S3_FILE_OVERWRITE = 'False'
-AWS_DEFAULT_ACL = 'None'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
