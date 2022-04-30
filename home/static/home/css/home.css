@@ -1,0 +1,21 @@
+.holder-nav{
+    background-color: red;
+} 
+
+h1{
+    color: black;
+}
+
+.content-container{
+    margin-top:100px;
+    text-align: center;
+    background-color: blueviolet;
+}
+
+.search-bar-container{
+     margin: 30px;
+     background-color: blanchedalmond;
+     display: flex;
+     justify-content: space-around;
+
+}
