@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'properies/css/properties.css' %}">
+{% endblock %}
+
 {% block content %}
     <H1 style="margin-top: 200px; color: black;"> TEST  DATA </H1>
     <form  method="GET" action="{% url 'all-properties' %}" class="form-inline">
@@ -11,9 +17,18 @@
     <div class="property-container">
         {% for property in properties %}
             <div class="property-card">
-                <img src="{{ property.image.url }}" alt="peoperty-head-image">
-                <h3 class="property-title">{{ property.title }}</h3>
-                <i class="fa-solid fa-bed"></i>
+                <div class="featured-image-container">
+                    <img class="property-card-featured-image" src="{{ property.image.url }}" alt="peoperty-head-image">
+                </div>
+                <div class="property-card-rest">
+                    <h2 class="property-title">{{ property.title }}</h2>
+                    <div class="icon-container">
+                        <i class="fa-solid fa-bed" style="padding-right: 5px;" >: {{property.Beds}} </i>
+                        <i class="fa-solid fa-toilet">: {{property.bathrooms}}</i>
+                    </div>
+                    <p class="property-desc">{{property.desc}}</p>
+                </div>
+                
 
             </div>
         {% endfor %}
