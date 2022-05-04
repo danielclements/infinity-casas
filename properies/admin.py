@@ -8,3 +8,4 @@ admin.site.register(price_freq)
 admin.site.register(property_type)
 admin.site.register(provence)
 admin.site.register(country)
+

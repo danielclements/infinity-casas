@@ -21,7 +21,11 @@ class property(models.Model):
     provence = models.ForeignKey('provence', null=True, blank=True, on_delete=models.SET_NULL)
     country = models.ForeignKey('country', null=True, blank=True, on_delete=models.SET_NULL)
     # video_url url// optional
-    # desc text // description Mandatory, No HTML,UTF-8 encoded text only
+    desc = models.CharField(max_length=254, null=True, blank=True)
+             #  No HTML, UTF-8 encoded text only
+			# Sentence case, no excessive capitalisation
+			# Use &#13; to force a line break in the text (remember, no HTML)
+
     # features array
     # images array
     image = models.ImageField(null=True, blank=True)
