@@ -1,4 +1,5 @@
 from datetime import datetime, date
+from tabnanny import verbose
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -8,6 +9,9 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class property(models.Model):
+    class Meta:
+        verbose_name_plural = "Properties"
+
     title = models.CharField(max_length=254, null=True, blank=True)
     Beds = models.IntegerField(blank=True, null=True)
     bathrooms = models.IntegerField(blank=True, null=True)
@@ -31,8 +35,11 @@ class property(models.Model):
     image = models.ImageField(null=True, blank=True)
     date = models.DateField(auto_now=True, blank=True)
 
+    # Agent model used to determine origin of property
+    agent = models.ForeignKey('agent', null=True, on_delete=models.SET_NULL)
+
     def __str__(self):
-        return self.title
+        return self.title + " - " + self.ref + " - " + str(self.agent)
 
 
 class currency_type(models.Model):
@@ -64,3 +71,8 @@ class country(models.Model):
     country = models.CharField(max_length=100,  null=True, blank=False)
     def __str__(self):
         return self.country
+
+class agent(models.Model):
+    agent = models.CharField(max_length=128, null=True, blank=False)
+    def __str__(self):
+        return self.agent

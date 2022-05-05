@@ -19,6 +19,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
+# Django Admin header Cusomization
+
+admin.site.site_header = "Infinity Casas Admin Portal"
+admin.site.site_title = " Infinity Casas Admin"
+admin.site.index_title = "Welcome to Infinity Casas Admin Page"
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
