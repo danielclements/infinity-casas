@@ -14,23 +14,62 @@
     <div class="properties-found">
         <h5> {{ property_count }} Properties found</h5>
     </div>
-    <div class="property-container">
-        {% for property in properties %}
-            <div class="property-card">
-                <div class="featured-image-container">
-                    <img class="property-card-featured-image" src="{{ property.image.url }}" alt="peoperty-head-image">
-                </div>
-                <div class="property-card-rest">
-                    <h2 class="property-title">{{ property.title }}</h2>
-                    <div class="icon-container">
-                        <i class="fa-solid fa-bed" style="padding-right: 5px;" >: {{property.Beds}} </i>
-                        <i class="fa-solid fa-toilet">: {{property.bathrooms}}</i>
+
+    <!-- <continer class="page-wrapper"> -->
+        <!-- <div class="property-container">
+            {% for property in properties %}
+                <div class="property-card">
+                    <div class="featured-image-container">
+                        <img class="property-card-featured-image" src="{{ property.image.url }}" alt="peoperty-head-image">
+                        <div class="price"><p class="property-price-inner"> {{ property.price }} {{property.currency}}</p></div>
                     </div>
-                    <p class="property-desc">{{property.desc}}</p>
+                    <div class="property-card-rest">
+                        <h2 class="property-title">{{ property.title }}</h2>
+                        <div class="icon-container">
+                            <i class="fa-solid fa-bed" style="padding-right: 5px;" >: {{property.Beds}} </i>
+                            <i class="fa-solid fa-toilet">: {{property.bathrooms}}</i>
+                        </div>
+                        <p class="property-desc">{{property.desc}}</p>
+                    </div>
                 </div>
-                
+            {% endfor %}
+        </div>
+        <div class="search-options">
+            <div class="locations">
 
             </div>
-        {% endfor %}
+        </div> -->
+    <!-- </continer>  -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg-8 border border-success">
+                {% for property in properties %}
+                    <div class="property-card mb-5">
+                        <div class="featured-image-container">
+                            <img class="property-card-featured-image" src="{{ property.image.url }}" alt="peoperty-head-image">
+                        </div>
+                        <div class="property-card-rest pl-4 pt-3">
+                            <h2 class="property-title">{{ property.title }}</h2>
+                            <div class="icon-container">
+                                <i class="fa-solid fa-bed" style="padding-right: 5px;" >: {{property.Beds}} </i>
+                                <i class="fa-solid fa-toilet">: {{property.bathrooms}}</i>
+                                
+                            </div>
+                            <p class="property-desc">{{property.desc}}</p>
+                            <div class="price"><p class="property-price-inner"> {{ property.price }} {{property.currency}}</p></div>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col col-lg-3 offset-lg-1 ml-1 border border-danger">
+                <div class="search-options">
+                    <div class="locations">
+        
+                    </div>
+                </div> -->
+            </div>
+        </div>
     </div>
-{% endblock content %}
+{% endblock content %} 
