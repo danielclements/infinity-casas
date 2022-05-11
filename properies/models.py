@@ -13,6 +13,7 @@ class property(models.Model):
         verbose_name_plural = "Properties"
 
     title = models.CharField(max_length=254, null=True, blank=True)
+    
     Beds = models.IntegerField(blank=True, null=True)
     bathrooms = models.IntegerField(blank=True, null=True)
     pool = models.IntegerField(blank=True, null=True, validators=[MaxValueValidator(1), MinValueValidator(0)])
