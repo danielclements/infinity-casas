@@ -72,7 +72,7 @@
 }
 
 .font-50{
-  font-size: 65px;
+  font-size: 60px;
   color: #000000;
 }
 
@@ -110,4 +110,17 @@
 .price {
   display: flex;
   justify-content: space-between;
+}
+
+.property-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+  border-bottom: #000000 1px solid;
+}
+
+.property-link:hover {
+  
+  color: #bb2d3b;
+  border-color: #bb2d3b;
 }
