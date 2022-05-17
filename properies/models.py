@@ -13,7 +13,6 @@ class property(models.Model):
         verbose_name_plural = "Properties"
 
     title = models.CharField(max_length=254, null=True, blank=True)
-    
     Beds = models.IntegerField(blank=True, null=True)
     bathrooms = models.IntegerField(blank=True, null=True)
     pool = models.IntegerField(blank=True, null=True, validators=[MaxValueValidator(1), MinValueValidator(0)])
@@ -32,16 +31,29 @@ class property(models.Model):
 			# Use &#13; to force a line break in the text (remember, no HTML)
 
     # features array
-    # images array
-    image = models.ImageField(null=True, blank=True)
-    date = models.DateField(auto_now=True, blank=True)
+    
+    # Images
+    main_image = models.ImageField(null=True, blank=True)
+    pool_image = models.ImageField(null=True, blank=True)
+    living_room_image = models.ImageField(null=True, blank=True)
+    kitchen_image = models.ImageField(null=True, blank=True)
+    bedroom_1_image = models.ImageField(null=True, blank=True)
+    bedroom_2_image = models.ImageField(null=True, blank=True)
+    bathroom_image = models.ImageField(null=True, blank=True)
 
-    # Agent model used to determine origin of property
+    date = models.DateField(auto_now=True, blank=True)
     agent = models.ForeignKey('agent', null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.title + " - " + self.ref + " - " + str(self.agent)
 
+
+class property_image(models.Model):
+    ID = models.ForeignKey('property', null=True, on_delete=models.SET_NULL)
+    extra_image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.ID.ref
 
 class currency_type(models.Model):
     currency_type = models.CharField(max_length=254, null=True, blank=True)
