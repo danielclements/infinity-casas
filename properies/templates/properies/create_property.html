@@ -19,6 +19,11 @@ New Project
               {% for form in fullForm %}
                 <p class="label-class">{{ form.label }}</p>{{ form }}<br><br>
               {% endfor %}
+              <h2> Extra Property Images</h2>
+              {{ imageForm.management_form }}
+              {% for test in imageForm %}
+                  {{ test }}
+              {% endfor %}
               <input type="submit">
             </form>
 
