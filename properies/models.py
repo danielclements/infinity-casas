@@ -49,7 +49,7 @@ class property(models.Model):
 
 
 class property_image(models.Model):
-    ID = models.ForeignKey('property', null=True, on_delete=models.SET_NULL)
+    ID = models.ForeignKey('property', null=True, on_delete=models.CASCADE)
     extra_image = models.ImageField(null=True, blank=True)
 
     def __str__(self):

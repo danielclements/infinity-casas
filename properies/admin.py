@@ -17,4 +17,4 @@ class PropertyAdmin(admin.ModelAdmin):
     ordering = ('agent',)
 
 
-admin.site.register(property, PropertyAdmin)
+admin.site.register(property, PropertyAdmin) 
