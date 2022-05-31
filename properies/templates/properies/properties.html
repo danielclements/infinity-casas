@@ -81,7 +81,9 @@
         {% for property in properties %}
             <div class="row m-0" style="height: 40.75rem;">
                 <div class="col-6 p-0">
-                    <img class="property-image" src="{{ property.main_image.url }}" alt="main-property-image">
+                    <a href="{% url 'property_detail' property.ref %} ">
+                        <img class="property-image" src="{{ property.main_image.url }}" alt="main-property-image">
+                    </a>
                 </div>
                 <div class="col-6 p-0 mt-3">
                     <div class="property-details">
@@ -102,7 +104,7 @@
                                 <p class="ref-number"> Ref: {{ property.ref }}</p>
                             </div>
                             <div class="go-to-property">
-                                <a href="" class="property-link mulish-400">Go To Property</a>
+                                <a href="{% url 'property_detail' property.ref %}" class="property-link mulish-400">Go To Property</a>
                             </div>
                         </div>
                     </div>

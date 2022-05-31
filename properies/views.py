@@ -1,10 +1,10 @@
 from audioop import reverse
 from importlib.metadata import files
+from weakref import ref
 from django.contrib import messages
-
 from multiprocessing import context
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
 
@@ -49,3 +49,15 @@ def add_property(request):
         imageForm = image_form()
     
     return render(request, "properies/create_property.html", {"fullForm": fullForm, "imageForm": imageForm} )
+
+
+def property_detail(request, property_ref):
+        # """ This view returns the individual property  page """
+
+        property_item = get_object_or_404(property, ref=property_ref)
+
+        context = {
+            'property': property_item,
+        }
+        return render(request, 'properies/propertyPage.html', context)
+ 
