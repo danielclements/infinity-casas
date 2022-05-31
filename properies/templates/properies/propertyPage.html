@@ -3,8 +3,36 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'properies/css/properties.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.6/dist/css/splide.min.css">
+{% endblock %}
+{% block extra_javascript %}
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.6/dist/js/splide.min.js"></script>
+    <script src="{% static 'properies/javascript/properties.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-    
+
+
+<section class="splide" aria-label="Splide Basic HTML Example" id="main-slider">
+    <div class="splide__slider">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide"><img src="{{ property.main_image.url }}" alt=""></li>
+                <li class="splide__slide"><img src="{{ property.pool_image.url }}" alt=""></li>
+                <li class="splide__slide"><img src="{{ property.living_room_image.url }}" alt=""></li>
+            </ul>
+        </div>
+    </div>
+  </section>
+  <section class="splide" aria-label="Splide Basic HTML Example" id="thumbnail-slider">
+    <div class="splide__slider">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <li class="splide__slide"><img src="{{ property.main_image.url }}" alt=""></li>
+                <li class="splide__slide"><img src="{{ property.pool_image.url }}" alt=""></li>
+                <li class="splide__slide"><img src="{{ property.living_room_image.url }}" alt=""></li>
+            </ul>
+        </div>
+    </div>
+  </section>
 {% endblock content %} 
