@@ -10,8 +10,6 @@ class add_property_form(forms.ModelForm):
         fields = '__all__'
         labels = {
             'title': _('Property Title'),
-            'beds': _('beds'),
-
         }
 
 class image_form(forms.ModelForm):

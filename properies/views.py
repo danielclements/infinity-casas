@@ -39,8 +39,8 @@ def add_property(request):
             f.save()
             for i in files:
                 property_image.objects.create(ID=f, extra_image=i)
-                messages.success(request, "New property Added")
             return render(request, "home/index.html")
+            
         else:
             print(fullForm.errors)
             
