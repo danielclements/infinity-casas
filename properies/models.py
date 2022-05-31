@@ -54,6 +54,8 @@ class property(models.Model):
 
 
 class property_image(models.Model):
+    class Meta:
+        verbose_name_plural = "Property Images"
     ID = models.ForeignKey('property', null=True, on_delete=models.CASCADE)
     extra_image = models.ImageField(null=True, blank=True)
 
@@ -61,12 +63,16 @@ class property_image(models.Model):
         return self.ID.ref
 
 class currency_type(models.Model):
+    class Meta:
+        verbose_name_plural = "Currency Type"
     currency_type = models.CharField(max_length=254, null=True, blank=True)
 
     def __str__(self):
         return self.currency_type
 
 class price_freq(models.Model):
+    class Meta:
+        verbose_name_plural = "Sale Type"
     price_freq = models.CharField(max_length=254, null=True, blank=False)
 
     def __str__(self):
@@ -74,6 +80,8 @@ class price_freq(models.Model):
 
 # https://help.kyero.com/property-types-used-in-kyero Kyero property type source page
 class property_type(models.Model):
+    class Meta:
+        verbose_name_plural = "Property Types"
     property_type = models.CharField(max_length=254, null=True, blank=False)
 
     def __str__(self):
