@@ -3,6 +3,7 @@ from tabnanny import verbose
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.forms import model_to_dict
 
 
 # Create your models here.
@@ -33,6 +34,10 @@ class property(models.Model):
     # features array
     
     # Images
+    status = models.ForeignKey('property_status', null=True, blank=True, on_delete=models.SET_NULL)
+
+    sold = models.BooleanField(null=True, blank=True)
+    secret_key = models.CharField(max_length=254, null=True, blank=True)
     main_image = models.ImageField(null=True, blank=True)
     pool_image = models.ImageField(null=True, blank=True)
     living_room_image = models.ImageField(null=True, blank=True)
@@ -89,3 +94,10 @@ class agent(models.Model):
     agent = models.CharField(max_length=128, null=True, blank=False)
     def __str__(self):
         return self.agent
+
+class property_status(models.Model):
+    class Meta:
+        verbose_name_plural = "Status"
+    status = models.CharField(max_length=100,  null=True, blank=False)
+    def __str__(self):
+        return self.status

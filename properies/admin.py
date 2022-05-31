@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import property,currency_type, price_freq, property_type, provence, country, agent, property_image
+from .models import property,currency_type, price_freq, property_type, provence, country, agent, property_image, property_status
 # Register your models here.
 
 
@@ -10,6 +10,7 @@ admin.site.register(provence)
 admin.site.register(country)
 admin.site.register(agent)
 admin.site.register(property_image)
+admin.site.register(property_status)
 
 class PropertyAdmin(admin.ModelAdmin):
 
