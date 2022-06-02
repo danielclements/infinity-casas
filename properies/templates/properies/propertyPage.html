@@ -31,6 +31,9 @@
                 <li class="splide__slide"><img src="{{ property.main_image.url }}" alt=""></li>
                 <li class="splide__slide"><img src="{{ property.pool_image.url }}" alt=""></li>
                 <li class="splide__slide"><img src="{{ property.living_room_image.url }}" alt=""></li>
+                {% for image in extra_images %}
+                    <li class="splide__slide"><img src="{{ image.extra_image.url }}" alt=""></li>
+                {% endfor %}
             </ul>
         </div>
     </div>

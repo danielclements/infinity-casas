@@ -56,11 +56,11 @@ class property(models.Model):
 class property_image(models.Model):
     class Meta:
         verbose_name_plural = "Property Images"
-    ID = models.ForeignKey('property', null=True, on_delete=models.CASCADE)
+    link_ID = models.ForeignKey('property', null=True, on_delete=models.CASCADE)
     extra_image = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.ID.ref
+        return self.link_ID.ref
 
 class currency_type(models.Model):
     class Meta:
