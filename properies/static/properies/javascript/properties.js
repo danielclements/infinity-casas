@@ -1,10 +1,9 @@
 document.addEventListener( 'DOMContentLoaded', function() {
     var main = new Splide( '#main-slider', {
         type       : 'loop',
-        padding: '5rem',
         heightRatio: 0.5,
         pagination : false,
-        arrows     : false,
+        arrows     : true,
         cover      : true,
       } );
       
@@ -17,6 +16,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
         focus           : 'center',
         pagination      : false,
         cover           : true,
+        arrows          : false,
         dragMinThreshold: {
           mouse: 4,
           touch: 10,
