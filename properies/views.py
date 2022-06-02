@@ -1,4 +1,5 @@
 from audioop import reverse
+from gc import get_objects
 from importlib.metadata import files
 from weakref import ref
 from django.contrib import messages
@@ -55,9 +56,12 @@ def property_detail(request, property_ref):
         # """ This view returns the individual property  page """
 
         property_item = get_object_or_404(property, ref=property_ref)
+        extra_images = property_image.objects.filter(link_ID=property_item.id)
+
 
         context = {
             'property': property_item,
+            'extra_images': extra_images
         }
         return render(request, 'properies/propertyPage.html', context)
  

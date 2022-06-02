@@ -1,6 +1,7 @@
 document.addEventListener( 'DOMContentLoaded', function() {
     var main = new Splide( '#main-slider', {
-        type       : 'fade',
+        type       : 'loop',
+        padding: '5rem',
         heightRatio: 0.5,
         pagination : false,
         arrows     : false,
