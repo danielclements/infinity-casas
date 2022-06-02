@@ -17,9 +17,12 @@
     <div class="splide__slider">
         <div class="splide__track">
             <ul class="splide__list">
-                <li class="splide__slide"><img src="{{ property.main_image.url }}" alt=""></li>
+                <li class="splide__slide"><img src="{{ property.main_image.url }}" alt="Property Front Image"></li>
                 <li class="splide__slide"><img src="{{ property.pool_image.url }}" alt=""></li>
                 <li class="splide__slide"><img src="{{ property.living_room_image.url }}" alt=""></li>
+                {% for image in extra_images %}
+                    <li class="splide__slide"><img src="{{ image.extra_image.url }}" alt="Property Image"></li>
+                {% endfor %}
             </ul>
         </div>
     </div>
@@ -32,7 +35,7 @@
                 <li class="splide__slide"><img src="{{ property.pool_image.url }}" alt=""></li>
                 <li class="splide__slide"><img src="{{ property.living_room_image.url }}" alt=""></li>
                 {% for image in extra_images %}
-                    <li class="splide__slide"><img src="{{ image.extra_image.url }}" alt=""></li>
+                    <li class="splide__slide"><img src="{{ image.extra_image.url }}" alt="Property Image"></li>
                 {% endfor %}
             </ul>
         </div>
