@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # Intalled apps
     'home',
     'properies',
-
+    'information'
     'storages',
 ]
 
