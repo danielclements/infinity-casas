@@ -161,7 +161,68 @@ transform: translateX(15px);
 
 /* Navbar-End */
 
+/* Property Search CSS */
+
+.property-search-filter {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 340px;
+    width: 6.5rem;
+    z-index: 100;
+    cursor: pointer;
+    left: calc(100% - 6.5rem);
+    right: 0;
+    transition: left .6s linear;
+
+}
+
+.property-search-filter-clr-toogle{
+    background-color: var(--secondary);
+    color: #131313;
+    transition: background-color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+
+}
+
+.property-search-filter-clr-toogle:hover{
+    background-color: black;
+    color: #f7f7f7;
+}
+
+.property-search-container-active-color-toogle{
+    background-color: #ffffff;
+    color: #131313;
+}
 
 
-/* index.html CSS */
+.property-search-filter:hover {
+    background-color: black;
+    color: #ffffff;
+}
+
+.property-search-filter-open-js {
+    left: 250px;
+
+}
+
+.search-filters {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 600;
+    width: 100%;
+    background-color: purple;
+    width: calc(100vw - 350px);    
+    left: 100%;
+    transition: left .6s linear;
+}
+
+
+
+.search-filter-open-js {
+    left: 350px;
+
+}
 
