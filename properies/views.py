@@ -19,7 +19,9 @@ def allProperties(request):
 
     properties = property.objects.filter(
         Q(title__icontains=q) or
-        Q(town__icontains=q)
+        Q(town__icontains=q) or
+        Q(provence__icontains=q) or
+        Q(desc__icontains=q)
         )
     property_count = properties.count()
     
