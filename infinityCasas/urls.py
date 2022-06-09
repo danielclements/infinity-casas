@@ -30,4 +30,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('all-properties/', include('properies.urls')),
+    path('info/', include('information.urls')),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
