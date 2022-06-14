@@ -30,14 +30,12 @@ class property(models.Model):
              #  No HTML, UTF-8 encoded text only
 			# Sentence case, no excessive capitalisation
 			# Use &#13; to force a line break in the text (remember, no HTML)
-
-    # features array
-    
-    # Images
+    # features array  
+    features = models.ManyToManyField('features', blank=True)  
     status = models.ForeignKey('property_status', null=True, blank=True, on_delete=models.SET_NULL)
-
     sold = models.BooleanField(null=True, blank=True)
     secret_key = models.CharField(max_length=254, null=True, blank=True)
+    # Images
     main_image = models.ImageField(null=True, blank=True)
     pool_image = models.ImageField(null=True, blank=True)
     living_room_image = models.ImageField(null=True, blank=True)
@@ -109,3 +107,10 @@ class property_status(models.Model):
     status = models.CharField(max_length=100,  null=True, blank=False)
     def __str__(self):
         return self.status
+
+class features(models.Model):
+    class Meta:
+        verbose_name_plural = "Features"
+    feature = models.CharField(max_length=100,  null=False, blank=False)
+    def __str__(self):
+        return self.feature
