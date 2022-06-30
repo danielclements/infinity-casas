@@ -19,10 +19,15 @@ body{
 /* Navbar */
 .container-nav{
     max-width: 1280px;
-    margin: 0 auto;
+    margin: 0 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: start;
+    text-transform: none;
 }
 
 .desktop-nav{
@@ -31,9 +36,7 @@ body{
     left: 0;
     right: 0;
     z-index: 99;
-    background-color: var(--light);
     padding: 2.5rem 7.5rem 2.5rem 2.5rem;
-    border-bottom: 3px solid var(--primary);
 }
 
 h1 {
@@ -96,7 +99,7 @@ transform: translateX(15px);
 .menu{
     display:none;
     flex: 1 1 0%;
-    justify-content: flex-end;
+    justify-content: center;
     margin: 0px -16px;
 }
 
@@ -113,6 +116,27 @@ transform: translateX(15px);
 .menu a.nav-active, .menu a:hover, .mobile-nav a:hover  {
     color: var(--secondary);
 
+}
+
+@media (min-width: 1024px) {
+    .nav-active::before  {
+        display: block;
+    }
+}
+    
+
+.nav-active ::before {
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    --bg-opacity: 1;
+    background-color: #000;
+    background-color: rgba(0,0,0,var(--bg-opacity));
+    bottom: -44px;
+    height: 0;
+    content: '';
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 
@@ -167,7 +191,7 @@ transform: translateX(15px);
     position: absolute;
     top: 0;
     bottom: 0;
-    height: 340px;
+    height: 290px;
     width: 6.5rem;
     z-index: 100;
     cursor: pointer;
