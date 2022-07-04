@@ -37,6 +37,8 @@ body{
     right: 0;
     z-index: 99;
     padding: 2.5rem 7.5rem 2.5rem 2.5rem;
+    background-color: var(--light);
+
 }
 
 h1 {
@@ -104,7 +106,7 @@ transform: translateX(15px);
 }
 
 .menu a{
-    color: var(--dark);
+    color: #959595;
     margin: 0;
     font-weight: 600;
     text-decoration: none;
@@ -114,7 +116,7 @@ transform: translateX(15px);
 }
 
 .menu a.nav-active, .menu a:hover, .mobile-nav a:hover  {
-    color: var(--secondary);
+    color: var(--dark);
 
 }
 
@@ -188,7 +190,7 @@ transform: translateX(15px);
 /* Property Search CSS */
 
 .property-search-filter {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     height: 290px;

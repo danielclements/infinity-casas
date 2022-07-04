@@ -19,3 +19,18 @@ h1{
      justify-content: space-around;
 
 }
+
+.image-container-landing{
+    background: url(https://infinity-casas-property-bucket.s3.eu-west-3.amazonaws.com/static/website-images/xCalella-de-Palafrugell-Catalonia-Spain-2400x1600.jpg.pagespeed.ic.E6UJUACeMw.webp) 
+    no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: 80px;
+    min-height: 100vh;
+}
+
+.home-info {
+    min-height: 100vh;
+}
