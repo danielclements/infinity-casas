@@ -31,6 +31,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('all-properties/', include('properies.urls')),
     path('info/', include('information.urls')),
+    path('api/', include('api.urls')),
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
